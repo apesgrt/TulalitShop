@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - Raffz Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Konfirmasi Pembayaran</h1>
+        <p><strong>Produk:</strong> <span id="product-name"></span></p>
+        <p><strong>Harga:</strong> <span id="product-price"></span> P</p>
+
+        <h3>Pilih Metode Pembayaran:</h3>
+        <button class="btn-pay" onclick="payNow('Dana')">Dana</button>
+        <button class="btn-pay" onclick="payNow('OVO')">OVO</button>
+        <button class="btn-pay" onclick="payNow('GoPay')">GoPay</button>
+
+        <a href="order.html" class="btn btn-back">Kembali ke Order</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get("product");
+        const price = urlParams.get("price");
+
+        document.getElementById("product-name").innerText = product;
+        document.getElementById("product-price").innerText = price;
+
+        function payNow(method) {
+            alert("Silakan kirim pembayaran via " + method + " dan konfirmasi ke admin.");
+        }
+    </script>
+</body>
+</html>
